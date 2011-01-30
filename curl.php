@@ -187,6 +187,17 @@ class Curl
     return curl_error($this->ch); 
   }
   
+  /**
+  * Gets information about the last transfer.
+  *
+  * @param int $option default 0 (all).
+  * @return array with all statistics.
+  */
+  public function get_info($option = 0)
+  {
+    return curl_getinfo($this->ch, $option); 
+  }
+  
   
 }
 
