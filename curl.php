@@ -15,6 +15,11 @@ class Curl
     $this->initialize();
   }
   
+  public function __destruct()
+  {
+    curl_close($this->ch); 
+  }
+  
   public function initialize()
   {
     curl_setopt($this->ch, CURLOPT_AUTOREFERER, TRUE);
@@ -74,6 +79,11 @@ class Curl
     curl_setopt($this->ch, CURLOPT_VERBOSE, TRUE); 
     curl_setopt($this->ch, CURLOPT_HEADER, TRUE);
     curl_setopt($this->ch, CURLOPT_NOPROGRESS, FALSE);
+  }
+  
+  public function get_response()
+  {
+    return $this->response; 
   }
   
   
