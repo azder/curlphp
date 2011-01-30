@@ -1,0 +1,3 @@
+This is my implementation for the wrapper around the 
+curl php client. Will provide standard rest HTTP methods
+via GET, POST, PUT and DELETE.
